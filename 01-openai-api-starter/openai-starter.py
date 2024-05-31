@@ -8,15 +8,18 @@ load_dotenv()
 client = OpenAI()
 
 # Set the OpenAI model to be used
-# "gpt-4o" - GPT-4o (“o” for “omni”) is OpenAI's most advanced model. It is multimodal (accepting text or image inputs and outputting text), and it has the same high intelligence as GPT-4 Turbo but is much more efficient—it generates text 2x faster and is 50% cheaper.
-# "gpt-4-turbo" - GPT-4 is a large multimodal model (accepting text or image inputs and outputting text) that can solve difficult problems with greater accuracy than any of the previous models.
-# "gpt-3.5-turbo" - GPT-3.5 Turbo models can understand and generate natural language or code and have been optimized for chat using the Chat Completions API but work well for non-chat tasks as well.
+# "gpt-4o" -  OpenAI’s top-tier model, faster and more cost-effective, handles text and images
+# "gpt-4-turbo" - A large, versatile model that improves problem-solving accuracy
+# "gpt-3.5-turbo" - Specialized for chat, this model also excels in general language and coding tasks
 MODEL = "gpt-3.5-turbo"
 
 # Invoke the API call
 # model - set the model to be used
 # messages - a list of message objects, where each object has two required fields, role and content
-# temperature - this param controls the randomness of the generated text. A higher temperature will make the output more random, while a lower temperature will make it more focused and deterministic
+# temperature - sampling temperature to use, between 0 and 2.
+#   Higher values like 0.8 will make the output more random,
+#   while lower values like 0.2 will make it more focused and deterministic
+
 response = client.chat.completions.create(
     model=MODEL,
     messages=[
