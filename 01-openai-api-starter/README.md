@@ -26,6 +26,7 @@ git clone https://github.com/KamalRavichandran/genai-llm-playground.git
 cd genai-llm-playground\01-openai-api-starter
 ```
 3. **Set Environment Variables**
+- Copy the `.env.example` file and rename it to `.env`.
 - Open the `.env` file and replace the placeholder with your actual OpenAI API key.
 4. **Install Dependencies**
 ```bash
